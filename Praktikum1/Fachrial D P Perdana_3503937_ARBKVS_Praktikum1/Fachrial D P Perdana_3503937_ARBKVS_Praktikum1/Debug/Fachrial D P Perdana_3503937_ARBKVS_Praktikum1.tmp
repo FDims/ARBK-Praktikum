@@ -1,0 +1,33 @@
+<ASSEMBLER_INFO>
+ <VERSION>2.2.7</VERSION>
+ <DEVICE>"ATmega328P"</DEVICE>
+ <WORKING_DIR>D:\GITHUB\ARBK-Praktikum\Praktikum1\Fachrial D P Perdana_3503937_ARBKVS_Praktikum1\Fachrial D P Perdana_3503937_ARBKVS_Praktikum1\Debug</WORKING_DIR>
+ <INCLUDE_PATH>
+  <DIR>C:/Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.2.209\avrasm\inc</DIR>
+  <DIR>C:\Program Files (x86)\Atmel\Studio\7.0\toolchain\avr8\avrassembler\Include</DIR>
+  <DIR></DIR>
+ </INCLUDE_PATH>
+ <SOURCE_FILE>D:\GITHUB\ARBK-Praktikum\Praktikum1\Fachrial D P Perdana_3503937_ARBKVS_Praktikum1\Fachrial D P Perdana_3503937_ARBKVS_Praktikum1\main.asm</SOURCE_FILE>
+ <INCLUDED_FILES>
+  <FILE>C:/Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.2.209\avrasm\inc\m328pdef.inc</FILE>
+ </INCLUDED_FILES>
+ <OBJECT_FILES>
+  <FILE>D:\GITHUB\ARBK-Praktikum\Praktikum1\Fachrial D P Perdana_3503937_ARBKVS_Praktikum1\Fachrial D P Perdana_3503937_ARBKVS_Praktikum1\Debug\Fachrial D P Perdana_3503937_ARBKVS_Praktikum1.obj</FILE>
+ </OBJECT_FILES>
+ <HEX_FILES>
+  <FILE>Fachrial D P Perdana_3503937_ARBKVS_Praktikum1.hex</FILE>
+ </HEX_FILES>
+ <OUTPUT_FILES>
+  <FILE>Fachrial D P Perdana_3503937_ARBKVS_Praktikum1.map</FILE>
+  <FILE>Fachrial D P Perdana_3503937_ARBKVS_Praktikum1.lss</FILE>
+ </OUTPUT_FILES>
+ <LABELS>
+  <start><FILE>D:\GITHUB\ARBK-Praktikum\Praktikum1\Fachrial D P Perdana_3503937_ARBKVS_Praktikum1\Fachrial D P Perdana_3503937_ARBKVS_Praktikum1\main.asm</FILE><LINE>14</LINE></start>
+  <main><FILE>D:\GITHUB\ARBK-Praktikum\Praktikum1\Fachrial D P Perdana_3503937_ARBKVS_Praktikum1\Fachrial D P Perdana_3503937_ARBKVS_Praktikum1\main.asm</FILE><LINE>28</LINE></main>
+  <delay><FILE>D:\GITHUB\ARBK-Praktikum\Praktikum1\Fachrial D P Perdana_3503937_ARBKVS_Praktikum1\Fachrial D P Perdana_3503937_ARBKVS_Praktikum1\main.asm</FILE><LINE>72</LINE></delay>
+  <loop1><FILE>D:\GITHUB\ARBK-Praktikum\Praktikum1\Fachrial D P Perdana_3503937_ARBKVS_Praktikum1\Fachrial D P Perdana_3503937_ARBKVS_Praktikum1\main.asm</FILE><LINE>33</LINE></loop1>
+  <next><FILE>D:\GITHUB\ARBK-Praktikum\Praktikum1\Fachrial D P Perdana_3503937_ARBKVS_Praktikum1\Fachrial D P Perdana_3503937_ARBKVS_Praktikum1\main.asm</FILE><LINE>42</LINE></next>
+  <loop2><FILE>D:\GITHUB\ARBK-Praktikum\Praktikum1\Fachrial D P Perdana_3503937_ARBKVS_Praktikum1\Fachrial D P Perdana_3503937_ARBKVS_Praktikum1\main.asm</FILE><LINE>61</LINE></loop2>
+  <L1><FILE>D:\GITHUB\ARBK-Praktikum\Praktikum1\Fachrial D P Perdana_3503937_ARBKVS_Praktikum1\Fachrial D P Perdana_3503937_ARBKVS_Praktikum1\main.asm</FILE><LINE>76</LINE></L1>
+ </LABELS>
+</ASSEMBLER_INFO>
