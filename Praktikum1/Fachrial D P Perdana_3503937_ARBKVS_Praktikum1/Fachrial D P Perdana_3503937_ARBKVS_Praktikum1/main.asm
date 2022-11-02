@@ -36,8 +36,8 @@ loop1:								;1. Schleife for PORTD 1 bis 7
 	rcall delay						;delay
 	ldi r21, 0b10000000				;r21 als Hilfe schreiben als letzte Position in PORTD damit kein 2 Licht eingeschaltet oder 1 Licht 2 mal eingeschaltet
 	cp r21,r16						;r21 und r16 vergleichen
-	breq next						;wenn r21 und r16 gleich geh nach "next"
-	brcc loop1						;zum loop1 zurückspringen, wenn Carry-Flag nicht gesetzt
+	breq next						;wenn r21 und r16 gleich nach "next" gehen
+	rjmp loop1						;zum loop1 zurückspringen, wenn Carry-Flag nicht gesetzt
 							
 next:								
 	ldi r16,0b00000000				;0 in r16 laden
