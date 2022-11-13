@@ -26,30 +26,22 @@ void setUp(){
 	sei();																//Enable global Interrupt
 }
 
-ISR(INT0_vect){															//Interrupt, wenn PIND2 gedrückt wird
-	if(PORTB1==on){														//PORTB 0 = LED D0
-		if(blink ==0){													//wenn LED D0 an und nicht blinkt
-			blink = 1;													//blinker einschalten
-		}else{															//wenn blinkt
-			blink = 0;													//blinker ausschalten			
-		}
+ISR(INT0_vect){															//Interrupt Service Routine, wenn PIND2 gedrückt wird
+	if(PORTB0==on){														//PORTB 0 = LED D0
+		blink^=(1<<0);													//blinker ein/ausschalten			
 	}else{																//wenn nicht an ist	
-		PORTB=(1<<PORTB1);												//LED D0 einschalten
+		PORTB=(1<<PORTB0);												//LED D0 einschalten
 	}
-	on = PORTB1;														// on-Status zu LED D0 umsetzen
+	on = PORTB0;														// on-Status zu LED D0 umsetzen
 }
 
-ISR(INT1_vect){															//Interrupt, wenn PIND3 gedrückt wird
-	if(PORTB2==on){														//PORTB 1 = LED D9
-		if(blink ==0){													//wenn LED D9 an und nicht blinkt
-			blink = 1;													//blinker einschalten
-		}else{															//wenn blinkt
-			blink = 0;													//blinker ausschalten
-		}
-		}else{															//wenn nicht an ist
-		PORTB=(1<<PORTB2);												//LED D9 einschalten
+ISR(INT1_vect){															//Interrupt Service Routine, wenn PIND3 gedrückt wird
+	if(PORTB1==on){														//PORTB 1 = LED D9
+		blink^=(1<<0);													//blinker ein/ausschalten
+	}else{																//wenn nicht an ist
+		PORTB=(1<<PORTB1);												//LED D9 einschalten
 	}
-	on = PORTB2;														// on-Status zu LED D9 umsetzen
+	on = PORTB1;														// on-Status zu LED D9 umsetzen
 }
 
 int main(void)
@@ -65,4 +57,3 @@ int main(void)
 		_delay_ms(200);
     }
 }
-
