@@ -53,11 +53,11 @@ int main(void)
 
 	
 	waitUntil(3000);						// wait until 3s from the beginning then turn on LED
-	PORTD = 1;					// setting bit for LED
+	PORTD = 1;								// setting bit for LED
 	while (1)
 	{
 		waitFor(1000);						// wait for 1s then toggle LED on/off
-		PORTD += 1;				// toggling LED
+		PORTD += 1;							// LED will count will increase
 	}
 }
 
