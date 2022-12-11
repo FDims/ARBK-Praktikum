@@ -23,17 +23,17 @@
 */
 
 volatile uint32_t count = 0;
-int convert[10] ={ 64, 121, 36, 48, 25, 18, 2, 120, 0, 16};
+int convert[10] ={ 64, 121, 36, 48, 25, 18, 2, 120, 0, 16};				//convert count into number in sevensegment
 
-ISR(PCINT0_vect){
-	if(!(PINB & (1<<PINB1))){
+ISR(PCINT0_vect){														//Interrupt Routine
+	if(!(PINB & (1<<PINB1))){											//if SW1 pressed
 		if(count == 99){
 			count =0;
 		}else{
 			count++;
 		}
 	}
-	if(!(PINB & (1<<PINB2))){
+	if(!(PINB & (1<<PINB2))){											//if SW2 pressed
 		if(count == 0){
 			count =99;
 		}else{
@@ -42,11 +42,11 @@ ISR(PCINT0_vect){
 	}
 }
 void setup(){
-	DDRD=0xff;
-	PORTD=1<<PIND6;
+	DDRD=0xff;															//PORTD as output
+	PORTD=1<<PIND6;														//starting from 0 in sevseg.
 	
-	DDRB = 0x01;
-	PORTB = (1<<PINB1)|(1<<PINB2);
+	DDRB = 0x01;														//PINB 0 as input and the rest are output
+	PORTB = (1<<PINB1)|(1<<PINB2);										//set bit for both inputs
 }
 int main(void)
 {
@@ -54,11 +54,11 @@ int main(void)
 	init();
     while (1) 
     {
-		int ones = count%10;
-		int tens = (count-ones)/10;
+		int ones = count%10;										//for the right sevseg
+		int tens = (count-ones)/10;									//for the left sevseg
 		
-		out(ones,convert);
-		out(tens,convert);
+		out(ones,convert);											//output display
+		out(tens,convert);											//output display
     }
 }
 
