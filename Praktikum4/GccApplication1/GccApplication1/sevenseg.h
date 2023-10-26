@@ -12,7 +12,7 @@
 #ifndef SEVENSEG_H_
 #define SEVENSEG_H_
 
-void out(int count , int convert[]);
+void out(int count);
 
 
 #endif /* SEVENSEG_H_ */

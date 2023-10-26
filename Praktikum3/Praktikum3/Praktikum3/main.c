@@ -11,15 +11,13 @@
 #define F_CPU 16000000
 #include <avr/interrupt.h>
 
-#define LED PIND0
 
 volatile uint32_t systemClock = 0;
 
 void TC0_setUp() {							//Timer 0 verwenden
 	TCCR0A = (1 << WGM01);					// enable CTC mode of Timer/Counter 0 Control Register A
+	
 	TCCR0B |= (1 << CS01) | (1 << CS00);	// set Prescaler 64
-											// Prescaler = (16000000Hz . 0,001s)/2^8 = 62,5
-											//closest factor = 64
 											
 	OCR0A = 249;							// set up Output Comparison Register A for Timer0 to generate an interrupt when timer counter and OCR0A are equals
 											// OCR = F_clk / (F_TimerInterrupt x prescaler) - 1 = ( 16MHz/(1000Hz x 64) ) - 1 = 249
@@ -56,8 +54,8 @@ int main(void)
 	PORTD = 1;								// setting bit for LED
 	while (1)
 	{
-		waitFor(1000);						// wait for 1s then toggle LED on/off
-		PORTD += 1;							// LED will count will increase
+		waitFor(200);						// wait for 0.2s to count up
+		PORTD ++;							// LED will count will increase
 	}
 }
 

@@ -397,10 +397,10 @@ END GROUP
 .debug_pubnames
  *(.debug_pubnames)
 
-.debug_info     0x00000000      0x7ad
+.debug_info     0x00000000      0x7ac
  *(.debug_info .gnu.linkonce.wi.*)
  .debug_info    0x00000000      0x5f4 C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.2.209/gcc/dev/atmega328p/avr5/crtatmega328p.o
- .debug_info    0x000005f4      0x1b9 main.o
+ .debug_info    0x000005f4      0x1b8 main.o
 
 .debug_abbrev   0x00000000      0x6c1
  *(.debug_abbrev)
@@ -416,11 +416,11 @@ END GROUP
  *(.debug_frame)
  .debug_frame   0x00000000       0xa0 main.o
 
-.debug_str      0x00000000      0x392
+.debug_str      0x00000000      0x3a8
  *(.debug_str)
  .debug_str     0x00000000      0x208 C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.2.209/gcc/dev/atmega328p/avr5/crtatmega328p.o
- .debug_str     0x00000208      0x18a main.o
-                                0x1be (size before relaxing)
+ .debug_str     0x00000208      0x1a0 main.o
+                                0x1d4 (size before relaxing)
 
 .debug_loc      0x00000000       0x92
  *(.debug_loc)

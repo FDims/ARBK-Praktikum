@@ -7,6 +7,8 @@
 
 #include "keys.h"
 
+
+
 void init(){
 	cli();
 	PCICR = (1<<PCIE0);

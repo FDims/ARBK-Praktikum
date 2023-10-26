@@ -15,19 +15,19 @@ Idx Name          Size      VMA       LMA       File off  Algn
                   CONTENTS, READONLY
   5 .debug_aranges 00000048  00000000  00000000  0000026c  2**0
                   CONTENTS, READONLY, DEBUGGING
-  6 .debug_info   000007ad  00000000  00000000  000002b4  2**0
+  6 .debug_info   000007ac  00000000  00000000  000002b4  2**0
                   CONTENTS, READONLY, DEBUGGING
-  7 .debug_abbrev 000006c1  00000000  00000000  00000a61  2**0
+  7 .debug_abbrev 000006c1  00000000  00000000  00000a60  2**0
                   CONTENTS, READONLY, DEBUGGING
-  8 .debug_line   000002a6  00000000  00000000  00001122  2**0
+  8 .debug_line   000002a6  00000000  00000000  00001121  2**0
                   CONTENTS, READONLY, DEBUGGING
   9 .debug_frame  000000a0  00000000  00000000  000013c8  2**2
                   CONTENTS, READONLY, DEBUGGING
- 10 .debug_str    00000392  00000000  00000000  00001468  2**0
+ 10 .debug_str    000003a8  00000000  00000000  00001468  2**0
                   CONTENTS, READONLY, DEBUGGING
- 11 .debug_loc    00000092  00000000  00000000  000017fa  2**0
+ 11 .debug_loc    00000092  00000000  00000000  00001810  2**0
                   CONTENTS, READONLY, DEBUGGING
- 12 .debug_ranges 00000038  00000000  00000000  0000188c  2**0
+ 12 .debug_ranges 00000038  00000000  00000000  000018a2  2**0
                   CONTENTS, READONLY, DEBUGGING
 
 Disassembly of section .text:
@@ -88,7 +88,7 @@ Disassembly of section .text:
   8c:	0c 94 00 00 	jmp	0	; 0x0 <__vectors>
 
 00000090 <TC0_setUp>:
-#define LED PIND0
+
 
 volatile uint32_t systemClock = 0;
 
@@ -96,12 +96,11 @@ void TC0_setUp() {							//Timer 0 verwenden
 	TCCR0A = (1 << WGM01);					// enable CTC mode of Timer/Counter 0 Control Register A
   90:	92 e0       	ldi	r25, 0x02	; 2
   92:	94 bd       	out	0x24, r25	; 36
+	
 	TCCR0B |= (1 << CS01) | (1 << CS00);	// set Prescaler 64
   94:	85 b5       	in	r24, 0x25	; 37
   96:	83 60       	ori	r24, 0x03	; 3
   98:	85 bd       	out	0x25, r24	; 37
-											// Prescaler = (16000000Hz . 0,001s)/2^8 = 62,5
-											//closest factor = 64
 											
 	OCR0A = 249;							// set up Output Comparison Register A for Timer0 to generate an interrupt when timer counter and OCR0A are equals
   9a:	89 ef       	ldi	r24, 0xF9	; 249
@@ -226,18 +225,18 @@ int main(void)
  164:	80 e0       	ldi	r24, 0x00	; 0
  166:	90 e0       	ldi	r25, 0x00	; 0
  168:	0e 94 9c 00 	call	0x138	; 0x138 <waitUntil>
-	PORTD = 1;					// setting bit for LED
+	PORTD = 1;								// setting bit for LED
  16c:	81 e0       	ldi	r24, 0x01	; 1
  16e:	8b b9       	out	0x0b, r24	; 11
 	while (1)
 	{
-		waitFor(1000);						// wait for 1s then toggle LED on/off
- 170:	68 ee       	ldi	r22, 0xE8	; 232
- 172:	73 e0       	ldi	r23, 0x03	; 3
+		waitFor(200);						// wait for 0.2s to count up
+ 170:	68 ec       	ldi	r22, 0xC8	; 200
+ 172:	70 e0       	ldi	r23, 0x00	; 0
  174:	80 e0       	ldi	r24, 0x00	; 0
  176:	90 e0       	ldi	r25, 0x00	; 0
  178:	0e 94 7c 00 	call	0xf8	; 0xf8 <waitFor>
-		PORTD += 1;				// toggling LED
+		PORTD ++;							// LED will count will increase
  17c:	8b b1       	in	r24, 0x0b	; 11
  17e:	8f 5f       	subi	r24, 0xFF	; 255
  180:	8b b9       	out	0x0b, r24	; 11

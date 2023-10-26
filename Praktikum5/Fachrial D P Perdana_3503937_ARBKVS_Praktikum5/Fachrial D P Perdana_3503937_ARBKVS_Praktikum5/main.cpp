@@ -9,30 +9,30 @@ mutex Mutex;
 Semaphore semaphore;
 
 void threadT1() {
-	Mutex.lock();
+	//Mutex.lock();
 	for (char i = 'a'; i <= 'z'; i++) {
 		cout << i << ", ";
 	}
 	cout << endl;
-	Mutex.unlock();
+	//Mutex.unlock();
 }
 
 void threadT2() {
-	Mutex.lock();
+	//Mutex.lock();
 	for (int i = 0; i <= 32; i++) {
 		cout << i << ", ";
 	}
 	cout << endl;
-	Mutex.unlock();
+	//Mutex.unlock();
 }
 
 void threadT3() {
-	Mutex.lock();
+	//Mutex.lock();
 	for (char i = 'A'; i <= 'Z'; i++) {
 		cout << i << ", ";
 	}
 	cout << endl;
-	Mutex.unlock();
+	//Mutex.unlock();
 }
 
 void MutexThreading() {
@@ -81,8 +81,8 @@ void SemaphoreThreading() {
 }
 
 int main() {
-	SemaphoreThreading();
-	//MutexThreading();
+	//SemaphoreThreading();
+	MutexThreading();
 
 	return 0;
 }
